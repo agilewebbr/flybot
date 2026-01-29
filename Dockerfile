@@ -40,6 +40,10 @@ ENV NODE_ENV=production
 ENV PORT=3003
 ENV NODE_ENV=production
 
+# Realize as permissões ainda como ROOT
+RUN chmod -R +x /root/.local/share/pnpm && \
+    ln -s /root/.local/share/pnpm/clawdbot /usr/local/bin/clawdbot
+
 # Security hardening: Run as non-root user
 USER node
 
