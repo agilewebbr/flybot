@@ -48,7 +48,7 @@ RUN chmod -R +x /root/.local/share/pnpm && \
 USER node
 
 # ... logo após o pnpm add -g clawdbot
-RUN chmod -R +x /root/.local/share/pnpm
+# RUN chmod -R +x /root/.local/share/pnpm
 # Se o pnpm estiver em outro local, use:
 # RUN chmod +x $(pnpm bin -g)/clawdbot
 
