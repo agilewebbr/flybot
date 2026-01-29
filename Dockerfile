@@ -44,4 +44,4 @@ ENV NODE_ENV=production
 USER node
 
 # Comando corrigido para iniciar o Gateway de forma persistente
-CMD ["node", "dist/index.js", "gateway", "--port", "3003"]
+CMD ["node", "dist/index.js", "gateway", "--port", "3003", "--allow-unconfigured"]
