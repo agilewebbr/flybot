@@ -43,5 +43,10 @@ ENV NODE_ENV=production
 # Security hardening: Run as non-root user
 USER node
 
+# ... logo após o pnpm add -g clawdbot
+RUN chmod -R +x /root/.local/share/pnpm
+# Se o pnpm estiver em outro local, use:
+# RUN chmod +x $(pnpm bin -g)/clawdbot
+
 # Comando corrigido para iniciar o Gateway de forma persistente
 CMD ["node", "dist/index.js", "gateway", "--port", "3003", "--allow-unconfigured"]
