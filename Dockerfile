@@ -35,6 +35,13 @@ ENV NODE_ENV=production
 # Security hardening: Run as non-root user
 # The node:22-bookworm image includes a 'node' user (uid 1000)
 # This reduces the attack surface by preventing container escape via root privileges
+
+# Garante que as variáveis de ambiente de porta sejam respeitadas
+ENV PORT=3003
+ENV NODE_ENV=production
+
+# Security hardening: Run as non-root user
 USER node
 
-CMD ["node", "dist/index.js"]
+# Comando corrigido para iniciar o Gateway de forma persistente
+CMD ["node", "dist/index.js", "gateway", "--port", "3003"]
